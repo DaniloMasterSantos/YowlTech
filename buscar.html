@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buscar artigos – YowlTech</title>
+<link rel="icon" href="logoYT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#17152F;--noite-2:#201D42;--violeta:#7B54F5;--violeta-fundo:#5B3DC4;
+  --lavanda:#A68CFF;--gelo:#EEEAFF;--laranja:#FF8A3D;--texto:#D9D4F5;--raio:18px;
+  --titulo:'Bricolage Grotesque','Trebuchet MS',sans-serif;--corpo:'Figtree','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--noite);color:var(--texto);font-family:var(--corpo);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+.wrap{width:min(900px,92%);margin-inline:auto}
+h1,h2,h3{font-family:var(--titulo);color:var(--gelo);line-height:1.1}
+
+header{position:sticky;top:0;z-index:50;background:rgba(23,21,47,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,140,255,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;width:min(1120px,92%);margin-inline:auto}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--titulo);font-weight:800;font-size:1.35rem;color:var(--gelo)}
+.marca img{width:40px;height:40px;object-fit:contain}
+.marca span{color:var(--laranja)}
+.voltar{padding:8px 16px;border-radius:999px;font-weight:500;border:1px solid rgba(166,140,255,.4);transition:background .2s}
+.voltar:hover{background:var(--violeta);color:#fff}
+
+main{flex:1}
+.topo{padding:56px 0 24px;text-align:center}
+.topo h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
+.topo h1 span{color:var(--laranja)}
+.topo p{margin:12px 0 28px}
+.campo{position:relative;max-width:640px;margin-inline:auto}
+.campo svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:var(--lavanda);pointer-events:none}
+.campo input{width:100%;padding:18px 54px 18px 56px;border-radius:999px;border:2px solid rgba(166,140,255,.35);background:var(--noite-2);color:var(--gelo);font:inherit;font-size:1.1rem;transition:border-color .2s,box-shadow .2s}
+.campo input::placeholder{color:#9b93c9}
+.campo input:focus{outline:0;border-color:var(--laranja);box-shadow:0 0 0 5px rgba(255,138,61,.18)}
+.limpar{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:var(--violeta);color:#fff;font-size:1.1rem;cursor:pointer;display:none}
+.limpar.mostra{display:block}
+.sugestoes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;font-size:.92rem}
+.sugestoes button,.filtros button{background:var(--noite-2);color:var(--texto);border:1px solid rgba(166,140,255,.3);padding:6px 14px;border-radius:999px;font:inherit;cursor:pointer;transition:.2s}
+.sugestoes button:hover,.filtros button:hover{border-color:var(--lavanda)}
+
+.barra{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin:30px 0 18px}
+.filtros{display:flex;flex-wrap:wrap;gap:8px}
+.filtros button.ativo{background:var(--violeta);color:#fff;border-color:var(--violeta)}
+.ordem{background:var(--noite-2);color:var(--texto);border:1px solid rgba(166,140,255,.3);padding:7px 12px;border-radius:999px;font:inherit}
+.contagem{margin-bottom:16px;font-weight:500}
+
+.lista{display:grid;gap:16px;padding-bottom:50px}
+.item{display:grid;grid-template-columns:110px 1fr;gap:18px;background:var(--noite-2);border-radius:var(--raio);overflow:hidden;transition:transform .25s,box-shadow .25s;animation:entra .4s both}
+.item:hover{transform:translateX(6px);box-shadow:0 12px 28px rgba(91,61,196,.4)}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}}
+.capa{position:relative;min-height:110px;background:linear-gradient(135deg,var(--violeta-fundo),var(--lavanda))}
+.capa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.item[data-cat=tech] .capa{background:linear-gradient(135deg,var(--violeta),var(--laranja))}
+.item[data-cat=hardware] .capa{background:linear-gradient(135deg,#2c2760,var(--violeta))}
+.corpo{padding:16px 18px 16px 0}
+.meta{font-size:.85rem;color:var(--lavanda)}
+.meta b{color:var(--laranja);font-weight:600}
+.item h3{font-size:1.25rem;margin:4px 0 6px}
+.item p{font-size:.95rem}
+mark{background:rgba(255,138,61,.35);color:var(--gelo);padding:0 3px;border-radius:4px}
+
+.vazio{text-align:center;padding:30px 0 70px}
+.vazio img{width:150px;animation:inclina 3s ease-in-out infinite}
+@keyframes inclina{50%{transform:rotate(-8deg) translateY(-6px)}}
+.vazio h2{font-size:1.6rem;margin:12px 0 6px}
+
+footer{padding:26px 0;border-top:1px solid rgba(166,140,255,.18);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.social{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--noite-2);border:1px solid rgba(166,140,255,.3);color:var(--gelo);transition:.2s}
+.social:hover{background:var(--laranja);color:#2a1300;transform:translateY(-3px)}
+
+@media(max-width:560px){
+  .item{grid-template-columns:78px 1fr}
+  .item:hover{transform:none}
+  .voltar span{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="marca"><img src="logoYT.png" alt=""> Yowl<span>Tech</span></a>
+    <a href="index.html" class="voltar">← <span>Voltar para o </span>início</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="topo">
+      <h1>O que você quer <span>encontrar</span>?</h1>
+      <p>Busque por título, assunto ou palavra-chave.</p>
+      <div class="campo" role="search">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Ex.: PC gamer, IA, headset…" aria-label="Buscar artigos" autocomplete="off" autofocus>
+        <button class="limpar" id="limpar" aria-label="Limpar busca">✕</button>
+      </div>
+      <div class="sugestoes" id="sugestoes"><span>Sugestões:</span></div>
+    </div>
+
+    <div class="barra">
+      <div class="filtros" role="group" aria-label="Filtrar por categoria">
+        <button class="ativo" data-cat="todos">Todos</button>
+        <button data-cat="games">Games</button>
+        <button data-cat="tech">Tecnologia</button>
+        <button data-cat="hardware">Hardware</button>
+      </div>
+      <select class="ordem" id="ordem" aria-label="Ordenar resultados">
+        <option value="relevancia">Mais relevantes</option>
+        <option value="recentes">Mais recentes</option>
+      </select>
+    </div>
+
+    <p class="contagem" id="contagem" role="status"></p>
+    <div class="lista" id="lista"></div>
+    <div class="vazio" id="vazio" hidden>
+      <img src="logoYT.png" alt="">
+      <h2>Nada por aqui…</h2>
+      <p>A coruja procurou em tudo e não achou. Tente outra palavra ou outra categoria.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> YowlTech. Todos os direitos reservados.</span>
+    <a class="social" href="#" aria-label="Instagram da YowlTech" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="artigos.js"></script>
+<script>
+const NOMES={games:'Games',tech:'Tecnologia',hardware:'Hardware'};
+const $=id=>document.getElementById(id);
+const campo=$('q'),lista=$('lista'),vazio=$('vazio'),contagem=$('contagem'),ordem=$('ordem'),limpar=$('limpar');
+let cat='todos';
+
+/* tira acentos e põe em minúsculas: "Inteligência" casa com "inteligencia" */
+const norm=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* destaca os termos encontrados */
+function destacar(texto,termos){
+  if(!termos.length)return esc(texto);
+  const n=norm(texto),marca=new Array(texto.length).fill(false);
+  termos.forEach(t=>{let i=n.indexOf(t);while(i!==-1){for(let k=i;k<i+t.length;k++)marca[k]=true;i=n.indexOf(t,i+t.length)}});
+  let out='',aberto=false;
+  [...texto].forEach((ch,k)=>{
+    if(marca[k]&&!aberto){out+='<mark>';aberto=true}
+    if(!marca[k]&&aberto){out+='</mark>';aberto=false}
+    out+=esc(ch);
+  });
+  return out+(aberto?'</mark>':'');
+}
+
+function formatarData(d){
+  return new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{day:'numeric',month:'short',year:'numeric'});
+}
+
+function buscar(){
+  const termos=norm(campo.value.trim()).split(/\s+/).filter(Boolean);
+  limpar.classList.toggle('mostra',campo.value.length>0);
+
+  let res=ARTIGOS.map(a=>{
+    if(cat!=='todos'&&a.categoria!==cat)return null;
+    const tit=norm(a.titulo),resto=norm([a.resumo,NOMES[a.categoria],...(a.tags||[])].join(' '));
+    let pontos=0;
+    for(const t of termos){          /* todas as palavras precisam aparecer */
+      const noTit=tit.includes(t),noResto=resto.includes(t);
+      if(!noTit&&!noResto)return null;
+      pontos+=(noTit?3:0)+(noResto?1:0);
+    }
+    return {a,pontos};
+  }).filter(Boolean);
+
+  if(ordem.value==='recentes'||!termos.length)res.sort((x,y)=>y.a.data.localeCompare(x.a.data));
+  else res.sort((x,y)=>y.pontos-x.pontos||y.a.data.localeCompare(x.a.data));
+
+  lista.innerHTML=res.map(({a},i)=>`
+    <a class="item" href="${esc(a.url)}" data-cat="${a.categoria}" style="animation-delay:${Math.min(i,8)*50}ms">
+      <div class="capa"><img src="${esc(a.imagem)}" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="corpo">
+        <div class="meta"><b>${NOMES[a.categoria]}</b> · ${formatarData(a.data)}</div>
+        <h3>${destacar(a.titulo,termos)}</h3>
+        <p>${destacar(a.resumo,termos)}</p>
+      </div>
+    </a>`).join('');
+
+  vazio.hidden=res.length>0;
+  const q=campo.value.trim();
+  contagem.textContent=res.length
+    ?(q?`${res.length} ${res.length===1?'resultado':'resultados'} para “${q}”`:`${res.length} artigos publicados`)
+    :'';
+
+  /* mantém a busca no endereço, para poder compartilhar o link */
+  const url=new URL(location.href);
+  q?url.searchParams.set('q',q):url.searchParams.delete('q');
+  history.replaceState(null,'',url);
+}
+
+campo.addEventListener('input',buscar);
+ordem.addEventListener('change',buscar);
+limpar.addEventListener('click',()=>{campo.value='';campo.focus();buscar()});
+document.querySelectorAll('.filtros button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filtros button').forEach(x=>x.classList.remove('ativo'));
+  b.classList.add('ativo');cat=b.dataset.cat;buscar();
+}));
+
+/* sugestões */
+['PC gamer','IA','headset','RPG','celular'].forEach(s=>{
+  const b=document.createElement('button');b.textContent=s;
+  b.onclick=()=>{campo.value=s;buscar();campo.focus()};
+  $('sugestoes').appendChild(b);
+});
+
+/* abre já com o termo vindo da página inicial (buscar.html?q=...) */
+campo.value=new URLSearchParams(location.search).get('q')||'';
+buscar();
+$('ano').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

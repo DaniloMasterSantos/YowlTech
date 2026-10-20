@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YowlTech – Tecnologia e games</title>
+<link rel="icon" href="logoYT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Paleta extraída do logotipo ===== */
+:root{
+  --noite:#17152F;      /* fundo */
+  --noite-2:#201D42;    /* superfícies */
+  --violeta:#7B54F5;    /* corpo da coruja */
+  --violeta-fundo:#5B3DC4;
+  --lavanda:#A68CFF;    /* fone de ouvido */
+  --gelo:#EEEAFF;       /* letras YT */
+  --laranja:#FF8A3D;    /* olhos */
+  --texto:#D9D4F5;
+  --raio:18px;
+  --titulo:'Bricolage Grotesque','Trebuchet MS',sans-serif;
+  --corpo:'Figtree','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noite);color:var(--texto);font-family:var(--corpo);line-height:1.6}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3{font-family:var(--titulo);color:var(--gelo);line-height:1.1}
+
+/* ===== Menu ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(23,21,47,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,140,255,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--titulo);font-weight:800;font-size:1.35rem;color:var(--gelo)}
+.marca img{width:40px;height:40px;object-fit:contain}
+.marca span{color:var(--laranja)}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{display:block;padding:8px 14px;border-radius:999px;font-weight:500;transition:background .2s,color .2s}
+nav a:hover,nav a.ativo{background:var(--violeta);color:#fff}
+.burger{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px}
+.burger span{display:block;height:3px;margin:6px 8px;background:var(--gelo);border-radius:3px;transition:.3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+/* ===== Hero ===== */
+.hero{padding:70px 0 50px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:800}
+.digita{color:var(--laranja);border-right:4px solid var(--laranja);padding-right:4px;animation:cursor .8s steps(1) infinite}
+@keyframes cursor{50%{border-color:transparent}}
+.hero p{max-width:46ch;margin:20px 0 28px;font-size:1.1rem}
+.botao{display:inline-block;background:var(--laranja);color:#2a1300;font-weight:600;padding:14px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+.botao:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(255,138,61,.35)}
+.botao.sec{background:transparent;color:var(--gelo);border:2px solid var(--lavanda);margin-left:10px}
+.botao.sec:hover{background:var(--violeta);box-shadow:none}
+.mascote{position:relative;display:grid;place-items:center}
+.mascote::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(123,84,245,.55),transparent 68%);animation:pulsa 4s ease-in-out infinite}
+.mascote img{position:relative;width:min(340px,80%);animation:flutua 5s ease-in-out infinite;filter:drop-shadow(0 20px 30px rgba(0,0,0,.4))}
+@keyframes flutua{50%{transform:translateY(-16px) rotate(-2deg)}}
+@keyframes pulsa{50%{transform:scale(1.15);opacity:.7}}
+
+/* ===== Carrossel ===== */
+section{padding:50px 0;scroll-margin-top:68px}
+.titulo-sec{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}
+.titulo-sec h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}
+.carrossel{position:relative;border-radius:var(--raio);overflow:hidden;background:var(--noite-2)}
+.trilho{display:flex;transition:transform .6s cubic-bezier(.6,.05,.2,1)}
+.slide{min-width:100%;min-height:380px;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;background-size:cover;background-position:center;background-color:var(--violeta-fundo);color:var(--texto)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,21,47,.85),transparent 65%)}
+.slide>*{position:relative;z-index:1;max-width:640px}
+.tag{align-self:flex-start;background:var(--laranja);color:#2a1300;font-weight:600;font-size:.85rem;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+.slide h3{font-size:clamp(1.5rem,3.5vw,2.4rem);margin-bottom:8px}
+.seta{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:46px;height:46px;border-radius:50%;border:0;background:rgba(238,234,255,.92);color:var(--noite);font-size:1.3rem;cursor:pointer;transition:background .2s,transform .2s}
+.seta:hover{background:var(--laranja);transform:translateY(-50%) scale(1.08)}
+.seta.ant{left:14px}.seta.prox{right:14px}
+.pontos{position:absolute;bottom:16px;right:24px;z-index:2;display:flex;gap:8px}
+.pontos button{width:12px;height:12px;border-radius:50%;border:0;background:rgba(238,234,255,.45);cursor:pointer;transition:.3s}
+.pontos button.ativo{background:var(--laranja);width:30px;border-radius:8px}
+
+/* ===== Posts ===== */
+.filtros{display:flex;flex-wrap:wrap;gap:8px}
+.filtros button{background:var(--noite-2);color:var(--texto);border:1px solid rgba(166,140,255,.3);padding:7px 16px;border-radius:999px;font:inherit;cursor:pointer;transition:.2s}
+.filtros button:hover{border-color:var(--lavanda)}
+.filtros button.ativo{background:var(--violeta);color:#fff;border-color:var(--violeta)}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;margin-top:24px}
+.post{background:var(--noite-2);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.post:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(91,61,196,.4)}
+.post.oculto{display:none}
+.capa{aspect-ratio:16/9;background:linear-gradient(135deg,var(--violeta-fundo),var(--lavanda));overflow:hidden}
+.capa img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.post:hover .capa img{transform:scale(1.06)}
+.post div.txt{padding:18px 20px 22px}
+.post small{color:var(--laranja);font-weight:600}
+.post h3{font-size:1.2rem;margin:6px 0 8px}
+.post p{font-size:.95rem}
+
+.vazio{margin-top:24px;padding:28px;text-align:center;background:var(--noite-2);border:1px dashed rgba(166,140,255,.4);border-radius:var(--raio)}
+.vazio[hidden]{display:none}
+
+/* ===== Sobre ===== */
+.sobre{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;background:var(--noite-2);border:1px solid rgba(166,140,255,.2);border-radius:28px;padding:56px;position:relative;overflow:hidden}
+.sobre::before{content:"";position:absolute;width:340px;height:340px;right:-120px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,61,.25),transparent 70%);pointer-events:none}
+.sobre-visual{position:relative;display:grid;place-items:center;width:100%;max-width:380px;aspect-ratio:1;margin:auto}
+.anel{position:absolute;inset:4%;border-radius:50%;border:2px dashed rgba(166,140,255,.5);animation:gira 40s linear infinite}
+.sobre-visual::before{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(123,84,245,.6),transparent 70%);animation:pulsa 4s ease-in-out infinite}
+.sobre-visual img{position:relative;width:62%;animation:flutua 5s ease-in-out infinite}
+.chip{position:absolute;background:var(--violeta);color:#fff;padding:7px 15px;border-radius:999px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px rgba(0,0,0,.3);animation:bob 4s ease-in-out infinite}
+.chip svg{width:16px;height:16px;vertical-align:-3px;margin-right:4px}
+.c1{top:8%;left:0}
+.c2{bottom:14%;right:0;background:var(--laranja);color:#2a1300;animation-delay:-1.4s}
+.c3{bottom:2%;left:8%;background:var(--violeta-fundo);animation-delay:-2.6s}
+@keyframes gira{to{transform:rotate(360deg)}}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.sobre-txt{position:relative}
+.sobre-txt h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+.sobre-txt h2 span{color:var(--laranja)}
+.sobre-txt>p{margin:16px 0 24px;max-width:52ch}
+.pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.pilar{background:var(--noite);border:1px solid rgba(166,140,255,.2);border-radius:14px;padding:16px;transition:transform .25s,border-color .25s}
+.pilar:hover{transform:translateY(-5px);border-color:var(--laranja)}
+.pilar .ico{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--violeta);color:#fff;margin-bottom:10px}
+.pilar .ico svg{width:22px;height:22px}
+.pilar h3{font-size:1rem;margin:6px 0 4px}
+.pilar p{font-size:.85rem}
+.esconde{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.esconde.visivel{opacity:1;transform:none}
+
+footer{margin-top:40px;padding:32px 0;border-top:1px solid rgba(166,140,255,.18);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+
+footer .social{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--noite-2);border:1px solid rgba(166,140,255,.3);color:var(--gelo);transition:background .2s,color .2s,transform .2s}
+footer .social:hover{background:var(--laranja);color:#2a1300;transform:translateY(-3px)}
+
+/* ===== Responsivo ===== */
+@media(max-width:820px){
+  .burger{display:block}
+  nav{position:absolute;top:68px;left:0;right:0;background:var(--noite);border-bottom:1px solid rgba(166,140,255,.18);max-height:0;overflow:hidden;transition:max-height .35s}
+  nav.aberto{max-height:420px}
+  nav ul{flex-direction:column;padding:12px 4%}
+    .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero p{margin-inline:auto}
+  .mascote{order:-1}
+  .mascote img{width:200px}
+  .botao.sec{margin:10px 0 0}
+  .slide{min-height:320px;padding:26px}
+  .sobre{grid-template-columns:1fr;padding:30px 22px;gap:30px}
+  .pilares{grid-template-columns:1fr}
+  .seta{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="marca"><img src="logoYT.png" alt=""> Yowl<span>Tech</span></a>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#" class="ativo">Início</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#posts">Artigos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="buscar.html">Buscar</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Tudo sobre <span class="digita" id="digita"></span></h1>
+        <p>Análises, notícias e guias de tecnologia e games, escritos por quem joga e testa de verdade.</p>
+        <a class="botao" href="#posts">Ler artigos</a>
+        <a class="botao sec" href="#sobre">Conhecer a YowlTech</a>
+      </div>
+      <div class="mascote"><img src="logoYT.png" alt="Coruja mascote da YowlTech usando fone de ouvido"></div>
+    </div>
+  </section>
+
+  <section id="destaques">
+    <div class="wrap">
+      <div class="titulo-sec"><h2>Em destaque</h2></div>
+      <div class="carrossel" id="carrossel" aria-roledescription="carrossel">
+        <div class="trilho" id="trilho"></div>
+        <button class="seta ant" aria-label="Slide anterior">‹</button>
+        <button class="seta prox" aria-label="Próximo slide">›</button>
+        <div class="pontos"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="posts">
+    <div class="wrap">
+      <div class="titulo-sec">
+        <h2>Últimos artigos</h2>
+        <div class="filtros" role="group" aria-label="Filtrar por categoria">
+          <button class="ativo" data-cat="todos">Todos</button>
+          <button data-cat="games">Games</button>
+          <button data-cat="tech">Tecnologia</button>
+          <button data-cat="hardware">Hardware</button>
+        </div>
+      </div>
+      <div class="grade" id="grade"></div>
+      <p class="vazio" id="vazio" role="status" hidden>Nenhum artigo encontrado. Tente outra palavra ou escolha outra categoria.</p>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sobre">
+        <div class="sobre-visual esconde">
+          <div class="anel"></div>
+          <img src="logoYT.png" alt="Coruja mascote da YowlTech">
+          <span class="chip c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="5.5"/><path d="M7 10.5v4M5 12.5h4"/><circle cx="16" cy="11.5" r=".8" fill="currentColor"/><circle cx="18.2" cy="13.5" r=".8" fill="currentColor"/></svg> Games</span>
+          <span class="chip c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg> Hardware</span>
+          <span class="chip c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg> Tecnologia</span>
+        </div>
+        <div class="sobre-txt esconde">
+          <h2>Quem está por trás da <span>YowlTech</span>?</h2>
+          <p>A YowlTech é um blog de tecnologia e games feito por quem gosta de testar, comparar e explicar sem complicar. Nossa coruja fica de olho nas novidades para que você escolha melhor o que jogar, comprar e aprender.</p>
+          <div class="pilares">
+            <div class="pilar"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><h3>Análises honestas</h3><p>Testamos de verdade e contamos o que funciona e o que não.</p></div>
+            <div class="pilar"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>Papo sem enrolação</h3><p>Linguagem simples, direta e sem termos difíceis à toa.</p></div>
+            <div class="pilar"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Sempre atualizado</h3><p>Lançamentos, dicas e guias para acompanhar o que está rolando.</p></div>
+          </div>
+          <a class="botao" href="#posts">Explorar artigos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> YowlTech. Todos os direitos reservados.</span>
+    <a class="social" href="#" aria-label="Instagram da YowlTech" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="artigos.js"></script>
+<script>
+/* Monta carrossel e cards a partir de artigos.js */
+const NOMES={games:'Games',tech:'Tecnologia',hardware:'Hardware'};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const recentes=[...ARTIGOS].sort((a,b)=>b.data.localeCompare(a.data));
+document.getElementById('trilho').innerHTML=recentes.filter(a=>a.destaque).slice(0,5).map(a=>`
+  <a class="slide" href="${esc(a.url)}" style="background-image:url('${esc(a.imagem)}')">
+    <span class="tag">${NOMES[a.categoria]}</span><h3>${esc(a.titulo)}</h3><p>${esc(a.resumo)}</p>
+  </a>`).join('');
+document.getElementById('grade').innerHTML=recentes.slice(0,6).map(a=>`
+  <a href="${esc(a.url)}" class="post" data-cat="${a.categoria}">
+    <div class="capa"><img src="${esc(a.imagem)}" alt="" loading="lazy" onerror="this.remove()"></div>
+    <div class="txt"><small>${NOMES[a.categoria]}</small><h3>${esc(a.titulo)}</h3><p>${esc(a.resumo)}</p></div>
+  </a>`).join('');
+
+/* Menu mobile */
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{
+  const aberto=menu.classList.toggle('aberto');
+  burger.setAttribute('aria-expanded',aberto);
+});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  menu.classList.remove('aberto');burger.setAttribute('aria-expanded','false');
+  menu.querySelectorAll('a').forEach(x=>x.classList.remove('ativo'));a.classList.add('ativo');
+}));
+
+/* Texto digitado no título */
+const palavras=['games','tecnologia','hardware','inovação'];
+const alvo=document.getElementById('digita');
+let p=0,c=0,apagando=false;
+function digitar(){
+  const w=palavras[p];
+  alvo.textContent=w.slice(0,c);
+  if(!apagando&&c===w.length){apagando=true;return setTimeout(digitar,1600)}
+  if(apagando&&c===0){apagando=false;p=(p+1)%palavras.length}
+  c+=apagando?-1:1;
+  setTimeout(digitar,apagando?60:110);
+}
+digitar();
+
+/* Carrossel */
+const car=document.getElementById('carrossel'),trilho=car.querySelector('.trilho');
+const slides=car.querySelectorAll('.slide'),pontos=car.querySelector('.pontos');
+let i=0,timer;
+slides.forEach((_,n)=>{
+  const b=document.createElement('button');
+  b.setAttribute('aria-label','Ir para o slide '+(n+1));
+  b.onclick=()=>{ir(n);reiniciar()};pontos.appendChild(b);
+});
+function ir(n){
+  i=(n+slides.length)%slides.length;
+  trilho.style.transform='translateX(-'+i*100+'%)';
+  pontos.querySelectorAll('button').forEach((b,k)=>b.classList.toggle('ativo',k===i));
+}
+function reiniciar(){clearInterval(timer);timer=setInterval(()=>ir(i+1),5500)}
+car.querySelector('.prox').onclick=()=>{ir(i+1);reiniciar()};
+car.querySelector('.ant').onclick=()=>{ir(i-1);reiniciar()};
+car.addEventListener('mouseenter',()=>clearInterval(timer));
+car.addEventListener('mouseleave',reiniciar);
+let x0=null;
+car.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+car.addEventListener('touchend',e=>{
+  if(x0===null)return;const d=e.changedTouches[0].clientX-x0;
+  if(Math.abs(d)>50){ir(i+(d<0?1:-1));reiniciar()}x0=null;
+});
+ir(0);reiniciar();
+
+/* Filtro por categoria + busca */
+const posts=[...document.querySelectorAll('.post')];
+let cat='todos';
+function filtrar(){
+  posts.forEach(po=>{
+    const okCat=cat==='todos'||po.dataset.cat===cat;
+    po.classList.toggle('oculto',!okCat);
+  });
+  document.getElementById('vazio').hidden=posts.some(po=>!po.classList.contains('oculto'));
+}
+document.querySelectorAll('.filtros button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filtros button').forEach(x=>x.classList.remove('ativo'));
+  b.classList.add('ativo');cat=b.dataset.cat;filtrar();
+}));
+
+/* Aparece ao rolar a página */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visivel');io.unobserve(e.target)}
+}),{threshold:.2});
+document.querySelectorAll('.esconde').forEach(el=>io.observe(el));
+document.getElementById('ano').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
