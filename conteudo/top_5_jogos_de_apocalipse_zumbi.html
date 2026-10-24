@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDITE 1/6: título da aba e descrição (aparece no Google) -->
+<title>Top 5 Jogos de Apocalipse Zumbi Imperdíveis – YowlTech</title>
+<meta name="description" content="Resumo curto do artigo, com até 160 caracteres.">
+<link rel="icon" href="../logoYT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#17152F;--noite-2:#201D42;--violeta:#7B54F5;--violeta-fundo:#5B3DC4;
+  --lavanda:#A68CFF;--gelo:#EEEAFF;--laranja:#FF8A3D;--texto:#D9D4F5;--raio:18px;
+  --titulo:'Bricolage Grotesque','Trebuchet MS',sans-serif;--corpo:'Figtree','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noite);color:var(--texto);font-family:var(--corpo);line-height:1.6}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--titulo);color:var(--gelo);line-height:1.15}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+.coluna{width:min(740px,92%);margin-inline:auto}
+.larga{width:min(1000px,92%);margin-inline:auto}
+img{max-width:100%}
+.grad{background:linear-gradient(135deg,var(--violeta-fundo),var(--lavanda))}
+
+#progresso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--violeta),var(--laranja));z-index:100}
+header.topo{position:sticky;top:0;z-index:50;background:rgba(23,21,47,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,140,255,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--titulo);font-weight:800;font-size:1.35rem;color:var(--gelo)}
+.marca img{width:40px;height:40px;object-fit:contain}
+.marca span{color:var(--laranja)}
+.links{display:flex;gap:6px}
+.links a{padding:8px 14px;border-radius:999px;font-weight:500;transition:background .2s,color .2s}
+.links a:hover{background:var(--violeta);color:#fff}
+
+/* cabeçalho */
+.cab{padding:48px 0 24px}
+.migalha{font-size:.92rem;margin-bottom:18px;color:var(--lavanda)}
+.migalha a:hover{color:var(--laranja)}
+.tag{display:inline-block;background:var(--laranja);color:#2a1300;font-weight:600;font-size:.85rem;padding:3px 14px;border-radius:999px;margin-bottom:14px}
+.cab h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
+.subtitulo{font-size:1.2rem;margin:14px 0}
+.info{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem;color:var(--lavanda)}
+.capa{margin:26px auto 0;width:min(1000px,92%)}
+.capa img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--raio)}
+.intro{padding:36px 0 10px;font-size:1.1rem}
+.intro>*+*{margin-top:1.1em}
+.intro a{color:var(--laranja);text-decoration:underline;text-underline-offset:3px}
+.intro strong{color:var(--gelo)}
+
+/* sumário automático */
+.sumario{margin:26px auto 0;background:var(--noite-2);border:1px solid rgba(166,140,255,.2);border-radius:var(--raio);padding:22px 24px}
+.sumario h2{font-size:1.2rem;margin-bottom:14px}
+.sumario ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.sumario a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;transition:background .2s}
+.sumario a:hover{background:var(--violeta)}
+.sumario b{display:grid;place-items:center;min-width:30px;height:30px;border-radius:50%;background:var(--laranja);color:#2a1300;font-size:.9rem}
+
+/* ranking */
+.lista-rank{counter-reset:rank var(--ini,0);padding:30px 0 10px}
+.rank{counter-increment:rank var(--passo,1);display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:center;margin-top:56px;scroll-margin-top:90px}
+.rank:nth-of-type(even) .rank-img{order:2}
+.rank-img{position:relative;aspect-ratio:16/9;border-radius:var(--raio);overflow:visible}
+.rank-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--raio);cursor:zoom-in;box-shadow:0 16px 36px rgba(0,0,0,.4);transition:transform .4s}
+.rank-img:hover img{transform:scale(1.02)}
+.rank-img.grad{border-radius:var(--raio)}
+.num{position:absolute;top:-18px;left:-14px;z-index:2;min-width:64px;height:64px;padding:0 10px;display:grid;place-items:center;border-radius:20px;background:var(--laranja);color:#2a1300;font-family:var(--titulo);font-weight:800;font-size:2rem;box-shadow:0 10px 22px rgba(0,0,0,.4);transform:rotate(-6deg)}
+.rank:nth-of-type(even) .num{left:auto;right:-14px;transform:rotate(6deg)}
+.num::before{content:counter(rank)}
+.rank h2{font-size:clamp(1.5rem,3vw,2rem)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chips span{background:var(--noite-2);border:1px solid rgba(166,140,255,.3);padding:3px 12px;border-radius:999px;font-size:.85rem;color:var(--gelo)}
+.rank p{margin-bottom:12px}
+.ficha{list-style:none;display:grid;gap:4px;font-size:.95rem;margin-bottom:14px}
+.ficha b{color:var(--laranja);font-weight:600}
+.saiba{display:inline-block;color:var(--laranja);font-weight:600;border-bottom:2px solid transparent;transition:border-color .2s}
+.saiba:hover{border-color:var(--laranja)}
+.revela{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.revela.visivel{opacity:1;transform:none}
+
+/* texto solto entre itens (opcional) */
+.texto{width:min(740px,100%);margin:56px auto 0;font-size:1.1rem}
+.destaque{background:linear-gradient(120deg,var(--violeta-fundo),var(--violeta));color:#fff;border-radius:var(--raio);padding:20px 24px}
+.destaque strong{color:#fff}
+
+/* galeria */
+.galeria-sec{padding:60px 0 10px}
+.galeria-sec h2{font-size:1.8rem;margin-bottom:6px}
+.galeria-sec>p{margin-bottom:22px}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.galeria figure{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.galeria img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;transition:transform .5s}
+.galeria figure:hover img{transform:scale(1.08)}
+.galeria figcaption{position:absolute;inset:auto 0 0 0;padding:26px 12px 10px;font-size:.85rem;color:#fff;background:linear-gradient(to top,rgba(23,21,47,.9),transparent);pointer-events:none}
+.credito{font-size:.85rem;color:var(--lavanda);margin-top:18px}
+
+/* compartilhar, navegar, leia também */
+.compartilhar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:44px auto 0;padding:22px 0;border-block:1px solid rgba(166,140,255,.2)}
+.compartilhar span{font-weight:600;color:var(--gelo);margin-right:4px}
+.compartilhar a,.compartilhar button{display:inline-flex;align-items:center;gap:8px;background:var(--noite-2);color:var(--gelo);border:1px solid rgba(166,140,255,.3);padding:9px 16px;border-radius:999px;font:inherit;font-size:.95rem;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.compartilhar a:hover,.compartilhar button:hover{background:var(--laranja);color:#2a1300;transform:translateY(-2px)}
+.compartilhar svg{width:18px;height:18px}
+.navegar{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px auto 0}
+.navegar a{display:block;background:var(--noite-2);border:1px solid rgba(166,140,255,.25);border-radius:var(--raio);padding:16px 20px;transition:transform .2s,border-color .2s}
+.navegar a:hover{transform:translateY(-4px);border-color:var(--laranja)}
+.navegar small{color:var(--lavanda)}
+.navegar b{display:block;font-family:var(--titulo);color:var(--gelo);margin-top:2px}
+.navegar .prox{text-align:right}
+.navegar [hidden]{display:none}
+.leia{padding:50px 0 20px}
+.leia h2{font-size:1.8rem;margin-bottom:22px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.post{background:var(--noite-2);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.post:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(91,61,196,.4)}
+.post .mini{aspect-ratio:16/9;overflow:hidden}
+.post .mini img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.post:hover .mini img{transform:scale(1.06)}
+.post .txt{padding:16px 18px 20px}
+.post small{color:var(--laranja);font-weight:600}
+.post h3{font-size:1.1rem;margin:4px 0 6px}
+.post p{font-size:.92rem}
+
+/* visualizador de imagens (clique para ampliar) */
+#lb{position:fixed;inset:0;z-index:200;background:rgba(10,9,24,.94);display:grid;grid-template-rows:1fr auto;place-items:center;padding:20px;animation:surge .25s}
+#lb[hidden]{display:none}
+@keyframes surge{from{opacity:0}}
+#lb img{max-width:min(1200px,94vw);max-height:78vh;border-radius:12px;object-fit:contain}
+#lb p{color:var(--gelo);text-align:center;margin-top:12px;max-width:700px}
+#lb button{position:absolute;border:0;border-radius:50%;width:48px;height:48px;background:rgba(238,234,255,.92);color:var(--noite);font-size:1.4rem;cursor:pointer;transition:background .2s}
+#lb button:hover{background:var(--laranja)}
+#lb .x{top:18px;right:18px}
+#lb .e{left:16px;top:50%;transform:translateY(-50%)}
+#lb .d{right:16px;top:50%;transform:translateY(-50%)}
+
+#topo-btn{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--laranja);color:#2a1300;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:60}
+#topo-btn.mostra{opacity:1;pointer-events:auto;transform:none}
+#topo-btn svg{width:22px;height:22px}
+footer{margin-top:50px;padding:30px 0;border-top:1px solid rgba(166,140,255,.18);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.social{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--noite-2);border:1px solid rgba(166,140,255,.3);color:var(--gelo);transition:.2s}
+.social:hover{background:var(--laranja);color:#2a1300;transform:translateY(-3px)}
+
+@media(max-width:780px){
+  .rank{grid-template-columns:1fr;gap:22px}
+  .rank:nth-of-type(even) .rank-img{order:0}
+  .rank:nth-of-type(even) .num{left:-10px;right:auto;transform:rotate(-6deg)}
+  .num{left:-8px;top:-14px;min-width:54px;height:54px;font-size:1.6rem}
+  .navegar{grid-template-columns:1fr}
+  .navegar .prox{text-align:left}
+  #lb .e,#lb .d{top:auto;bottom:18px;transform:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.revela{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="progresso"></div>
+
+<header class="topo">
+  <div class="wrap nav">
+    <a href="../index.html" class="marca"><img src="../logoYT.png" alt=""> Yowl<span>Tech</span></a>
+    <nav class="links" aria-label="Principal">
+      <a href="../index.html">Início</a>
+      <a href="../buscar.html">Buscar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ============================================================
+       EDITE 2/6: informações do artigo
+       data-cat  = games | tech | hardware
+       data-data = data de publicação no formato AAAA-MM-DD
+       ============================================================ -->
+  <section class="cab" id="meta" data-cat="games" data-data="2026-10-30">
+    <div class="coluna">
+      <p class="migalha"><a href="../index.html">Início</a> › <a href="../buscar.html">Artigos</a></p>
+      <span class="tag" id="tag"></span>
+      <h1>Sobreviva Se Puder: Os Top 5 Jogos de Apocalipse Zumbi Imperdíveis</h1>
+      <p class="subtitulo">Nada como esquecer os problemas da vida derrotando uma horda de zumbis, mas pra isso você precisa ter boa opções de jogo e é claro que aqui te entregamos isso. Confira as melhores criações de universo zumbi para desestressar a mente.</p>
+      <div class="info"><span id="data"></span><span id="leitura"></span><span>Por YowlTech</span></div>
+    </div>
+  </section>
+
+  <!-- EDITE 3/6: imagem de capa (800x450 ou maior, proporção 16:9).
+       O caminho começa com ../imagens/ porque esta página fica na pasta conteudo -->
+  <div class="capa">
+    <img class="grad" src="../imagens/the_last_of_us1.png" alt="Descreva a imagem em poucas palavras" onerror="this.remove()">
+  </div>
+
+  <!-- EDITE 4/6: texto de abertura e sumário (o sumário é criado sozinho) -->
+  <div class="intro coluna">
+    <p>O gênero pós-apocalíptico com hordas de mortos-vivos sempre foi um dos pilares mais aclamados dos videogames. Seja pela tensão de gerenciar recursos escassos, pela jogabilidade eletrizante ou por narrativas profundas e emocionantes, o apocalipse zumbi oferece algumas das experiências mais imersivas que um jogador pode ter. Se você gosta de sentir a adrenalina de escapar de uma horda faminta ou quer viver histórias inesquecíveis em cenários devastados, confira a nossa lista com os 5 jogos de apocalipse zumbi absolutamente imperdíveis! <!--<a href="https://exemplo.com" target="_blank" rel="noopener">links</a>-->.</p>
+  </div>
+  <nav class="sumario larga" id="sumario" aria-label="Sumário" hidden>
+    <h2>Neste ranking</h2>
+    <ol></ol>
+  </nav>
+
+  <!-- ============================================================
+       EDITE 5/6: os itens do ranking.
+       data-ordem="crescente"  -> 1, 2, 3 ... (o melhor no começo)
+       data-ordem="regressiva" -> 10, 9, 8 ... 1 (suspense: o melhor no final)
+       Para adicionar um jogo, copie um bloco <article class="rank"> inteiro.
+       A numeração é automática: pode reordenar à vontade, sem renumerar.
+       Clique na imagem para ampliar: o atributo data-zoom faz isso.
+       ============================================================ -->
+  <section class="lista-rank larga" id="lista" data-ordem="crescente">
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <img src="../imagens/the_last_of_us.png" alt="IGDB Press kit" data-zoom loading="lazy" onerror="this.remove()">
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>The Last of Us (Parte I e II)</h2>
+        <div class="chips"><span>Ação</span><span>PC e consoles</span><span>2020</span></div>
+        <p>Impossível começar qualquer lista do gênero sem mencionar o grande obra-prima da Naughty Dog. Em vez dos mortos-vivos tradicionais de origem viral, a franquia introduz os infectados pelo fungo Cordyceps. O foco da franquia não é apenas o combate, mas a relação humana, o sacrifício e as escolhas difíceis em um mundo onde a humanidade muitas vezes se mostra pior do que os próprios monstros. Com gráficos deslumbrantes, trilha sonora marcante e combate brutal focado em stealth e crafting, é uma jornada emocionante do início ao fim.</p>
+        <ul class="ficha">
+          <li><b>Plataformas:</b> Playstation e PC</li>
+          <li><b>Desenvolvedora:</b> Naughty Dog</li>
+          <li><b>Estilo:</b> Survival Horror / Ação Cinematográfica</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <img src="../imagens/resident_evil2.jpg" alt="Nome do segundo jogo" data-zoom loading="lazy" onerror="this.remove()">
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Resident Evil 2</h2>
+        <div class="chips"><span>Ação e Terror</span><span>PC e consoles</span><span>2019</span></div>
+        <p>Lançado originalmente em 1998 e reimaginado de forma brilhante em 2019, o remake de Resident Evil 2 coloca você na pele do policial novato Leon S. Kennedy e da estudante Claire Redfield durante o colapso da icônica Raccoon City. O jogo é uma aula de como criar atmosfera de terror: corredores escuros, munição extremamente contada, zumbis resistentes que exigem estratégia para serem abatidos e a constante ameaça do infame Mr. X te perseguindo. É a experiência de sobrevivência definitiva para quem busca suspense puro.</p>
+        <ul class="ficha">
+          <li><b>Plataformas:</b> PC, PS4, PS5, Xbox One, Xbox Series X/S</li>
+          <li><b>Desenvolvedora:</b> Capcom</li>
+          <li><b>Estilo:</b> Survival Horror Clássico / Tensão</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Texto solto entre os itens (opcional): apague se não precisar -->
+    <div class="texto"><div class="destaque"><strong>BÔNUS:</strong> Esse não está na lista, mas se você gosta de jogar com os amigos online com certeza deveria dar uma olhada em <strong>Left 4 Dead</strong>, esse jogo é insano!</div></div>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <img src="../imagens/dying_light.jpg" alt="Nome do terceiro jogo" data-zoom loading="lazy" onerror="this.remove()">
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Dying Light</h2>
+        <div class="chips"><span>Ação</span><span>PC e Consoles</span><span>2015</span></div>
+        <p>Se a sua ideia de sobrevivência envolve escalar prédios em alta velocidade e aplicar golpes físicos letais em mortos-vivos, Dying Light é o jogo ideal. Ambientado na cidade em quarentena de Harran, o título inovou ao misturar mecânicas fluídas de parkour com um combate melee visceral. O grande diferencial do jogo é o seu ciclo de Dia e Noite. Durante o dia, você caça suprimentos e lida com zumbis lentos; ao cair da noite, os letais Volatiles saem para caçar, transformando a dinâmica do jogo em uma fuga desesperada pela vida.</p>
+        <ul class="ficha">
+          <li><b>Plataformas:</b> PC, PS4, Xbox One, Nintendo Switch</li>
+          <li><b>Desenvolvedora:</b> Techland</li>
+          <li><b>Estilo:</b> Mundo Aberto / Parkour e Combate em Primeira Pessoa</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <img src="../imagens/days_gone.jpg" alt="Nome do terceiro jogo" data-zoom loading="lazy" onerror="this.remove()">
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Days Gone</h2>
+        <div class="chips"><span>Mundo Aberto</span><span>PC e consoles</span><span>2019</span></div>
+        <p>Em Days Gone, acompanhas a jornada de Deacon St. John, um motoqueiro sobrevivente e caçador de recompensas num Oregon devastado por uma pandemia que transformou a população nos chamados Freakers (Frenéticos). O grande destaque do jogo é a gestão e personalização da tua motocicleta, que serve tanto como o teu principal meio de transporte como a tua única rota de fuga. Além disso, o jogo destaca-se pelas suas impressionantes hordas em tempo real, onde centenas de infectados se movem em simultâneo como um único organismo letal, exigindo muito planeamento, armadilhas e estratégia para seres bem-sucedido.</p>
+        <ul class="ficha">
+          <li><b>Plataformas:</b> PC, PS4</li>
+          <li><b>Desenvolvedora:</b> Bend Stuio</li>
+          <li><b>Estilo:</b> Mundo Aberto / Ação e Sobrevivência sobre Rodas</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <img src="../imagens/project_zomboid.webp" alt="Nome do terceiro jogo" data-zoom loading="lazy" onerror="this.remove()">
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Project Zomboid</h2>
+        <div class="chips"><span>RPG</span><span>PC</span><span>2013</span></div>
+        <p>Para os jogadores que buscam o desafio mais realista e punitivo possível, Project Zomboid é um prato cheio. Com visão isométrica e mecânicas profundas de RPG, a premissa do jogo é simples e direta: "Esta é a história de como você morreu". No game, você precisa gerenciar não apenas armas e comida, mas a saúde mental do seu personagem, tédio, lesões corporais específicas, eletricidade, água encanada e fortificação de abrigos. Um único arranhão de um zumbi pode significar o fim da sua jornada após semanas de sobrevivência.</p>
+        <ul class="ficha">
+          <li><b>Plataformas:</b> PC</li>
+          <li><b>Desenvolvedora:</b> The Indie Stone</li>
+          <li><b>Estilo:</b> RPG / Simulação Extrema de Sobrevivência</li>
+        </ul>
+      </div>
+    </article>
+
+
+  </section>
+
+  
+  <div class="coluna">
+    <div class="compartilhar" aria-label="Compartilhar">
+      <span>Compartilhar:</span>
+      <button type="button" id="copiar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></svg><b style="font-weight:500" id="copiar-txt">Copiar link</b></button>
+      <!--<a id="s-whats" href="#" target="_blank" rel="noopener">WhatsApp</a>-->
+      <a id="s-face" href="https://www.instagram.com/yowltech/" target="_blank" rel="noopener">Instagram</a>
+      <!--<a id="s-x" href="#" target="_blank" rel="noopener">X</a>-->
+    </div>
+
+    <!-- Anterior / próximo: se o artigo estiver no artigos.js, se preenchem sozinhos.
+         Para definir à mão, troque o href="#" pelo nome da página (ex.: outro-artigo.html). -->
+    <div class="navegar">
+      <a href="#" id="ant" hidden><small>← Artigo anterior</small><b></b></a>
+      <a href="#" id="prox" class="prox" hidden><small>Próximo artigo →</small><b></b></a>
+    </div>
+  </div>
+
+  <section class="leia">
+    <div class="wrap">
+      <h2>Leia também</h2>
+      <div class="grade" id="grade"></div>
+    </div>
+  </section>
+</main>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button class="x" aria-label="Fechar">✕</button>
+  <button class="e" aria-label="Imagem anterior">‹</button>
+  <button class="d" aria-label="Próxima imagem">›</button>
+  <img src="" alt="">
+  <p></p>
+</div>
+
+<button id="topo-btn" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></button>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> YowlTech. Todos os direitos reservados.</span>
+    <!-- troque o # pelo link do seu Instagram -->
+    <a class="social" href="https://www.instagram.com/yowltech/" aria-label="Instagram da YowlTech" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../artigos.js"></script>
+<script>
+const NOMES={games:'Games',tech:'Tecnologia',hardware:'Hardware'};
+/* esta página está na pasta conteudo; os caminhos do artigos.js partem da pasta principal */
+const RAIZ='../';
+const ir=u=>u==='#'?'#':RAIZ+u;
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* categoria, data e tempo de leitura */
+const meta=$('meta');
+$('tag').textContent=NOMES[meta.dataset.cat]||'Artigo';
+$('data').textContent=new Date(meta.dataset.data+'T12:00:00').toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+const palavras=document.querySelector('main').textContent.trim().split(/\s+/).length;
+$('leitura').textContent='Leitura de '+Math.max(1,Math.round(palavras/200))+' min';
+$('ano').textContent=new Date().getFullYear();
+
+/* numeração do ranking (crescente ou regressiva) e sumário automático */
+const lista=$('lista'),itens=[...lista.querySelectorAll('.rank')];
+const regressiva=lista.dataset.ordem==='regressiva';
+if(regressiva){lista.style.setProperty('--ini',itens.length+1);lista.style.setProperty('--passo',-1)}
+if(itens.length){
+  const ol=$('sumario').querySelector('ol');
+  itens.forEach((it,i)=>{
+    it.id='item-'+(i+1);
+    const n=regressiva?itens.length-i:i+1;
+    ol.insertAdjacentHTML('beforeend',`<li><a href="#item-${i+1}"><b>${n}</b>${esc(it.querySelector('h2').textContent)}</a></li>`);
+  });
+  $('sumario').hidden=false;
+}
+
+/* itens aparecem ao rolar */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visivel');io.unobserve(e.target)}
+}),{threshold:.15});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+
+/* clique para ampliar imagens */
+const fotos=[...document.querySelectorAll('img[data-zoom]')];
+const lb=$('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('p');
+let atual=0;
+function abrir(i){
+  atual=(i+fotos.length)%fotos.length;
+  const f=fotos[atual];
+  lbImg.src=f.dataset.full||f.src;lbImg.alt=f.alt;lbCap.textContent=f.alt;
+  lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.x').focus();
+}
+function fechar(){lb.hidden=true;document.body.style.overflow=''}
+fotos.forEach((f,i)=>f.addEventListener('click',()=>abrir(i)));
+lb.querySelector('.x').onclick=fechar;
+lb.querySelector('.e').onclick=()=>abrir(atual-1);
+lb.querySelector('.d').onclick=()=>abrir(atual+1);
+lb.addEventListener('click',e=>{if(e.target===lb)fechar()});
+addEventListener('keydown',e=>{
+  if(lb.hidden)return;
+  if(e.key==='Escape')fechar();
+  if(e.key==='ArrowLeft')abrir(atual-1);
+  if(e.key==='ArrowRight')abrir(atual+1);
+});
+let x0=null;
+lb.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(x0===null)return;const d=e.changedTouches[0].clientX-x0;
+  if(Math.abs(d)>50)abrir(atual+(d<0?1:-1));x0=null;
+});
+
+/* compartilhar */
+const url=encodeURIComponent(location.href),titulo=encodeURIComponent(document.querySelector('h1').textContent);
+$('s-whats').href='https://wa.me/?text='+titulo+'%20'+url;
+$('s-face').href='https://www.facebook.com/sharer/sharer.php?u='+url;
+$('s-x').href='https://twitter.com/intent/tweet?text='+titulo+'&url='+url;
+$('copiar').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(location.href);$('copiar-txt').textContent='Link copiado!'}
+  catch(e){$('copiar-txt').textContent='Copie pelo endereço do navegador'}
+  setTimeout(()=>$('copiar-txt').textContent='Copiar link',2200);
+});
+
+/* anterior, próximo e "leia também" a partir do artigos.js */
+const pagina=decodeURIComponent(location.pathname.split('/').pop());
+const todos=[...ARTIGOS].sort((a,b)=>b.data.localeCompare(a.data));
+const idx=todos.findIndex(a=>pagina&&a.url.split('/').pop()===pagina);
+function botao(el,art){
+  if(!art)return;
+  el.href=ir(art.url);el.querySelector('b').textContent=art.titulo;el.hidden=false;
+}
+if(idx>=0){botao($('ant'),todos[idx+1]);botao($('prox'),todos[idx-1]);}
+['ant','prox'].forEach(id=>{const b=$(id);if(b.getAttribute('href')!=='#')b.hidden=false});
+const outros=todos.filter((_,i)=>i!==idx);
+const mesma=outros.filter(a=>a.categoria===meta.dataset.cat);
+const sugeridos=[...mesma,...outros.filter(a=>!mesma.includes(a))].slice(0,3);
+$('grade').innerHTML=sugeridos.map(a=>`
+  <a class="post" href="${esc(ir(a.url))}">
+    <div class="mini grad"><img src="${esc(RAIZ+a.imagem)}" alt="" loading="lazy" onerror="this.remove()"></div>
+    <div class="txt"><small>${NOMES[a.categoria]}</small><h3>${esc(a.titulo)}</h3><p>${esc(a.resumo)}</p></div>
+  </a>`).join('');
+
+/* progresso de leitura e botão de voltar ao topo */
+const barra=$('progresso'),topoBtn=$('topo-btn');
+function rolar(){
+  const h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+  barra.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+  topoBtn.classList.toggle('mostra',h.scrollTop>600);
+}
+addEventListener('scroll',rolar,{passive:true});rolar();
+topoBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
