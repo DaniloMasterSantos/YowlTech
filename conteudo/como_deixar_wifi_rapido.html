@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDITE 1/5: título da aba e descrição (aparece no Google) -->
+<title>Como Deixar o Wi-Fi de Casa Mais Rápido: Guia Prático para Acabar com a Lerdeza – YowlTech</title>
+<meta name="description" content="Resumo curto do artigo, com até 160 caracteres.">
+<link rel="icon" href="../logoYT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#17152F;--noite-2:#201D42;--violeta:#7B54F5;--violeta-fundo:#5B3DC4;
+  --lavanda:#A68CFF;--gelo:#EEEAFF;--laranja:#FF8A3D;--texto:#D9D4F5;--raio:18px;
+  --titulo:'Bricolage Grotesque','Trebuchet MS',sans-serif;--corpo:'Figtree','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noite);color:var(--texto);font-family:var(--corpo);line-height:1.6}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--titulo);color:var(--gelo);line-height:1.15}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+.coluna{width:min(740px,92%);margin-inline:auto}
+
+/* barra de progresso de leitura */
+#progresso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--violeta),var(--laranja));z-index:100}
+
+header.topo{position:sticky;top:0;z-index:50;background:rgba(23,21,47,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,140,255,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--titulo);font-weight:800;font-size:1.35rem;color:var(--gelo)}
+.marca img{width:40px;height:40px;object-fit:contain}
+.marca span{color:var(--laranja)}
+.links{display:flex;gap:6px}
+.links a{padding:8px 14px;border-radius:999px;font-weight:500;transition:background .2s,color .2s}
+.links a:hover{background:var(--violeta);color:#fff}
+
+/* cabeçalho do artigo */
+.cab{padding:48px 0 24px}
+.migalha{font-size:.92rem;margin-bottom:18px;color:var(--lavanda)}
+.migalha a:hover{color:var(--laranja)}
+.tag{display:inline-block;background:var(--laranja);color:#2a1300;font-weight:600;font-size:.85rem;padding:3px 14px;border-radius:999px;margin-bottom:14px}
+.cab h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
+.subtitulo{font-size:1.2rem;margin:14px 0}
+.info{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem;color:var(--lavanda)}
+.capa{margin:26px auto 0;width:min(940px,92%)}
+.capa img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--raio);background:linear-gradient(135deg,var(--violeta-fundo),var(--lavanda))}
+
+/* texto do artigo */
+.conteudo{padding:40px 0 10px;font-size:1.1rem}
+.conteudo>*+*{margin-top:1.1em}
+.conteudo h2{font-size:1.75rem;margin-top:1.8em}
+.conteudo h3{font-size:1.3rem;margin-top:1.5em}
+.conteudo a{color:var(--laranja);text-decoration:underline;text-underline-offset:3px}
+.conteudo strong{color:var(--gelo)}
+.conteudo ul,.conteudo ol{padding-left:1.4em}
+.conteudo li+li{margin-top:.45em}
+.conteudo li::marker{color:var(--laranja)}
+.conteudo blockquote{border-left:4px solid var(--laranja);background:var(--noite-2);padding:16px 22px;border-radius:0 var(--raio) var(--raio) 0;color:var(--gelo);font-style:italic}
+.conteudo figure img{width:100%;border-radius:var(--raio);display:block}
+.conteudo figcaption{font-size:.88rem;color:var(--lavanda);margin-top:8px;text-align:center}
+.conteudo .destaque{background:linear-gradient(120deg,var(--violeta-fundo),var(--violeta));color:#fff;border-radius:var(--raio);padding:20px 24px}
+.conteudo .destaque strong{color:#fff}
+
+/* compartilhar */
+.compartilhar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:34px auto 0;padding:22px 0;border-block:1px solid rgba(166,140,255,.2)}
+.compartilhar span{font-weight:600;color:var(--gelo);margin-right:4px}
+.compartilhar a,.compartilhar button{display:inline-flex;align-items:center;gap:8px;background:var(--noite-2);color:var(--gelo);border:1px solid rgba(166,140,255,.3);padding:9px 16px;border-radius:999px;font:inherit;font-size:.95rem;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.compartilhar a:hover,.compartilhar button:hover{background:var(--laranja);color:#2a1300;transform:translateY(-2px)}
+.compartilhar svg{width:18px;height:18px}
+
+/* anterior / próximo */
+.navegar{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px auto 0}
+.navegar a{display:block;background:var(--noite-2);border:1px solid rgba(166,140,255,.25);border-radius:var(--raio);padding:16px 20px;transition:transform .2s,border-color .2s}
+.navegar a:hover{transform:translateY(-4px);border-color:var(--laranja)}
+.navegar small{color:var(--lavanda)}
+.navegar b{display:block;font-family:var(--titulo);color:var(--gelo);margin-top:2px}
+.navegar .prox{text-align:right}
+.navegar [hidden]{display:none}
+
+/* leia também */
+.leia{padding:50px 0 20px}
+.leia h2{font-size:1.8rem;margin-bottom:22px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.post{background:var(--noite-2);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.post:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(91,61,196,.4)}
+.post .mini{aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,var(--violeta-fundo),var(--lavanda))}
+.post .mini img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.post:hover .mini img{transform:scale(1.06)}
+.post .txt{padding:16px 18px 20px}
+.post small{color:var(--laranja);font-weight:600}
+.post h3{font-size:1.1rem;margin:4px 0 6px}
+.post p{font-size:.92rem}
+
+/* voltar ao topo */
+#topo-btn{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--laranja);color:#2a1300;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+#topo-btn.mostra{opacity:1;pointer-events:auto;transform:none}
+#topo-btn svg{width:22px;height:22px}
+
+footer{margin-top:50px;padding:30px 0;border-top:1px solid rgba(166,140,255,.18);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.social{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--noite-2);border:1px solid rgba(166,140,255,.3);color:var(--gelo);transition:.2s}
+.social:hover{background:var(--laranja);color:#2a1300;transform:translateY(-3px)}
+
+@media(max-width:560px){
+  .navegar{grid-template-columns:1fr}
+  .navegar .prox{text-align:left}
+  .conteudo{font-size:1.05rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="progresso"></div>
+
+<header class="topo">
+  <div class="wrap nav">
+    <a href="../index.html" class="marca"><img src="../logoYT.png" alt=""> Yowl<span>Tech</span></a>
+    <nav class="links" aria-label="Principal">
+      <a href="../index.html">Início</a>
+      <a href="../buscar.html">Buscar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ============================================================
+       EDITE 2/5: informações do artigo
+       data-cat  = games | tech | hardware
+       data-data = data de publicação no formato AAAA-MM-DD
+       ============================================================ -->
+  <section class="cab" id="meta" data-cat="hardware" data-data="2026-10-30">
+    <div class="coluna">
+      <p class="migalha"><a href="../index.html">Início</a> › <a href="../buscar.html">Artigos</a></p>
+      <span class="tag" id="tag"></span>
+      <h1>Como Deixar o Wi-Fi de Casa Mais Rápido: Guia Prático para Acabar com a Lerdeza</h1>
+      <p class="subtitulo">Para te ajudar a recuperar a velocidade máxima da sua rede sem precisar gastar uma fortuna logo de cara, listamos 6 passos práticos para turbinar o seu Wi-Fi.</p>
+      <div class="info"><span id="data"></span><span id="leitura"></span><span>Por YowlTech</span></div>
+    </div>
+  </section>
+
+  <!-- EDITE 3/5: imagem de capa (800x450, proporção 16:9) e descrição dela.
+       Como esta página fica na pasta conteudo, o caminho da imagem começa com ../imagens/ -->
+  <div class="capa">
+    <img src="../imagens/wifi.jpg" alt="Descreva a imagem em poucas palavras" onerror="this.remove()">
+  </div>
+
+  <!-- ============================================================
+       EDITE 4/5: texto do artigo. Copie e cole os blocos abaixo
+       conforme precisar (parágrafo, subtítulos, listas, citação...).
+       ============================================================ -->
+  <article class="conteudo coluna" id="conteudo">
+    <p>Não há nada mais frustrante do que estar no meio de uma partida online, assistindo a um filme em 4K ou tentando enviar um arquivo de trabalho e, de repente, a famosa cerquinha de "carregando" aparece na tela. Se a internet da sua operadora é rápida no papel, mas a conexão via Wi-Fi parece arrastada, o problema raramente é o plano contratado — e sim como o sinal está se comportando dentro da sua casa.</p>
+
+    <h2>Tópicos abordados:</h2>
+    <ol>
+      <li><a href="#topico1">A Regra de Ouro: Posicionamento do Roteador</a></li>
+      <li><a href="#topico2">Escolha a Banda Certa: 2.4 GHz vs. 5 GHz</a></li>
+      <li><a href="#topico3">Mude o Canal do Wi-Fi (Fuja da Congestão)</a></li>
+      <li><a href="#topico4">Reinicie o Aparelho com Frequência</a></li>
+      <li><a href="#topico5">Cuidado com Roubo de Sinal e Excesso de Aparelhos</a></li>
+      <li id="topico1"><a href="#topico6">Considere um Upgrade (Seu Roteador é Antigo?)</a></li>
+    </ol>
+
+    <h2>Posicionamento do Roteador</h2>
+    <p>O roteador não é um objeto decorativo que deve ficar escondido dentro de um armário, atrás da televisão ou no chão da sala. As ondas Wi-Fi se propagam em todas as direções (e sofrem com barreiras físicas).</p>
+
+    <p id="topico2">Coloque o aparelho em um local central da casa, preferencialmente no alto (sobre uma prateleira ou fixado na parede) e longe de grandes obstáculos como paredes de concreto espessas, espelhos e eletrodomésticos grandes (como geladeiras e micro-ondas, que geram interferência eletromagnética).</p>
+
+    <h2>Escolha a Banda Certa(2.4 GHz vs 5 GHz)</h2>
+    <p>A maioria dos roteadores modernos transmite em duas frequências diferentes. Saber qual usar muda tudo</p>
+
+    <p><strong>Banda de 2.4 GHz:</strong> Tem maior alcance e atravessa paredes com facilidade, mas é mais lenta e sofre muita interferência (de redes vizinhas, micro-ondas e bluetooth). Use para dispositivos IoT (lâmpadas inteligentes, assistentes de voz) ou aparelhos distantes.</p>
+
+    <p id="topico3"><strong>Banda de 5 GHz:</strong> É muito mais rápida e livre de interferências, mas tem menor alcance e dificuldade para passar por paredes grossas. Conecte seu PC de jogos, console e Smart TV principal nesta frequência.</p>
+
+    <h2>Mude o Canal do Wi-Fi(Fuja da Congestão)</h2>
+    <p>Se você mora em prédio ou em uma rua movimentada, o seu roteador e o dos seus vizinhos provavelmente estão brigando pelo mesmo espaço no ar (especialmente na frequência de 2.4 GHz).</p>
+
+    <p id="topico4">Para evitar isso acesse as configurações do seu roteador pelo navegador (geralmente digitando o IP padrão que fica na etiqueta do aparelho) e altere o canal do Wi-Fi. Aplicativos gratuitos para celular (como Wi-Fi Analyzer) mostram quais canais estão menos congestionados na sua casa.</p>
+
+    <h2>Reinicie o Aparelho com Frequência</h2>
+    <p>Parece clichê de suporte técnico, mas tem motivo científico. Os roteadores são basicamente minicomputadores com memória RAM e processador. Com o uso contínuo, eles acumulam cache e podem sofrer lentidão.</p>
+
+    <p id="topico5">Desligue o roteador da tomada, espere cerca de 30 segundos e ligue novamente. Fazer isso de vez em quando limpa a memória do aparelho e reestabelece a melhor rota de sinal.</p>
+
+    <h2>Cuidado com Roubo de Sinal e Excesso de Aparelhos</h2>
+    <p>Quantos dispositivos estão conectados na sua rede neste exato momento? Celulares, TVs, computadores, consoles e até visitas usando sua senha consomem largura de banda.</p>
+
+    <p id="topico6">Dê uma olhada no aplicativo de controle do seu roteador para verificar quem está conectado. Se notar intrusos, altere imediatamente a senha do Wi-Fi utilizando uma combinação forte de letras, números e símbolos. Além disso, se há muita gente baixando arquivos pesados ao mesmo tempo, vale configurar a priorização de tráfego (QoS) no painel do roteador.</p>
+
+    <h2>Considere um Upgrade (Seu Roteador é Antigo?)</h2>
+    <p>Se o seu roteador tem mais de 5 ou 6 anos, ele provavelmente utiliza tecnologias ultrapassadas (como os antigos padrões Wi-Fi 4 ou Wi-Fi 5 de entrada) que não dão conta dos planos de internet modernos de alta velocidade.</p>
+
+    <p>Investir em um roteador moderno compatível com Wi-Fi 6 ou sistemas Mesh (que criam uma rede única espalhando "torres" pela casa toda) resolve definitivamente problemas de sinal fraco em residências grandes ou com muitas paredes.</p>
+
+    <figure>
+      <img src="../imagens/wifi2.jpg" alt="Unsplash" loading="lazy">
+      <figcaption>Imagem de roteadores</figcaption>
+    </figure>
+
+    <div class="destaque"><strong>Dica de ouro:</strong> Antes de gastar dinheiro trocando de plano de internet ou comprando repetidores caros, faça o teste definitivo: fique a um metro do seu roteador e meça a velocidade. Depois, vá até o cômodo onde a internet cai e repita o teste. Se a velocidade despencar só pela distância ou paredes no meio, o problema é 100% físico e de posicionamento — e não da sua operadora! Posicionar bem o aparelho resolve 80% dos problemas de lerdeza sem custar um centavo.</div>
+
+    <h2>Conclusão</h2>
+    <p>Antes de ligar reclamando para a operadora, experimente reposicionar o seu roteador para um local mais aberto, conecte seus aparelhos principais na frequência de 5 GHz e dê aquela reiniciada básica no sistema. Pequenos ajustes físicos e de configuração costumam fazer milagres pela velocidade da sua internet!</p>
+  </article>
+
+  <div class="coluna">
+    <div class="compartilhar" id="compartilhar" aria-label="Compartilhar">
+      <span>Compartilhar:</span>
+      <button type="button" id="copiar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></svg><b style="font-weight:500" id="copiar-txt">Copiar link</b></button>
+      <!--<a id="s-whats" href="#" target="_blank" rel="noopener">WhatsApp</a>-->
+      <a id="s-face" href="https://www.instagram.com/yowltech/" target="_blank" rel="noopener">Instagram</a>
+      <!--<a id="s-x" href="#" target="_blank" rel="noopener">X</a>-->
+    </div>
+
+    <!-- ============================================================
+         EDITE 5/5 (opcional): botões de anterior / próximo.
+         Se este artigo estiver no artigos.js, eles se preenchem sozinhos.
+         Para definir à mão, troque o href="#" pelo nome da página (ex.: outro-artigo.html, pois ficam na mesma pasta).
+         ============================================================ -->
+    <div class="navegar">
+      <a href="#" id="ant" hidden><small>← Artigo anterior</small><b></b></a>
+      <a href="#" id="prox" class="prox" hidden><small>Próximo artigo →</small><b></b></a>
+    </div>
+  </div>
+
+  <section class="leia">
+    <div class="wrap">
+      <h2>Leia também</h2>
+      <div class="grade" id="grade"></div>
+    </div>
+  </section>
+</main>
+
+<button id="topo-btn" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></button>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> YowlTech. Todos os direitos reservados.</span>
+    <!-- troque o # pelo link do seu Instagram -->
+    <a class="social" href="https://www.instagram.com/yowltech/" aria-label="Instagram da YowlTech" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../artigos.js"></script>
+<script>
+const NOMES={games:'Games',tech:'Tecnologia',hardware:'Hardware'};
+/* esta página está na pasta conteudo; os caminhos do artigos.js partem da pasta principal */
+const RAIZ='../';
+const ir=u=>u==='#'?'#':RAIZ+u;
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* categoria, data e tempo de leitura */
+const meta=$('meta');
+$('tag').textContent=NOMES[meta.dataset.cat]||'Artigo';
+$('data').textContent=new Date(meta.dataset.data+'T12:00:00').toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+const palavras=$('conteudo').textContent.trim().split(/\s+/).length;
+$('leitura').textContent='Leitura de '+Math.max(1,Math.round(palavras/200))+' min';
+$('ano').textContent=new Date().getFullYear();
+
+/* compartilhar */
+/* compartilhar */
+const url = encodeURIComponent(location.href);
+const titulo = encodeURIComponent(document.querySelector('h1').textContent);
+
+// Compartilhamento pelo WhatsApp (se o botão existir)
+const whatsapp = $('s-whats');
+if (whatsapp) {
+  whatsapp.href = 'https://wa.me/?text=' + titulo + '%20' + url;
+}
+
+// Compartilhamento pelo Facebook (se o botão existir)
+const facebook = $('s-face');
+if (facebook) {
+  facebook.href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+}
+
+// Compartilhamento pelo X (se o botão existir)
+const twitter = $('s-x');
+if (twitter) {
+  twitter.href = 'https://twitter.com/intent/tweet?text=' + titulo + '&url=' + url;
+}
+$('copiar').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(location.href);$('copiar-txt').textContent='Link copiado!'}
+  catch(e){$('copiar-txt').textContent='Copie pelo endereço do navegador'}
+  setTimeout(()=>$('copiar-txt').textContent='Copiar link',2200);
+});
+
+/* anterior, próximo e "leia também" a partir do artigos.js */
+const pagina=decodeURIComponent(location.pathname.split('/').pop());
+const lista=[...ARTIGOS].sort((a,b)=>b.data.localeCompare(a.data));
+const idx=lista.findIndex(a=>pagina&&a.url.split('/').pop()===pagina);
+function botao(el,art){
+  if(!art)return;
+  el.href=ir(art.url);el.querySelector('b').textContent=art.titulo;el.hidden=false;
+}
+if(idx>=0){botao($('ant'),lista[idx+1]);botao($('prox'),lista[idx-1]);}
+['ant','prox'].forEach(id=>{const b=$(id);if(b.getAttribute('href')!=='#')b.hidden=false});
+
+const outros=lista.filter((_,i)=>i!==idx);
+const mesma=outros.filter(a=>a.categoria===meta.dataset.cat);
+const sugeridos=[...mesma,...outros.filter(a=>!mesma.includes(a))].slice(0,3);
+$('grade').innerHTML=sugeridos.map(a=>`
+  <a class="post" href="${esc(ir(a.url))}">
+    <div class="mini"><img src="${esc(RAIZ+a.imagem)}" alt="" loading="lazy" onerror="this.remove()"></div>
+    <div class="txt"><small>${NOMES[a.categoria]}</small><h3>${esc(a.titulo)}</h3><p>${esc(a.resumo)}</p></div>
+  </a>`).join('');
+
+/* progresso de leitura e botão de voltar ao topo */
+const barra=$('progresso'),topoBtn=$('topo-btn');
+function rolar(){
+  const h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+  barra.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+  topoBtn.classList.toggle('mostra',h.scrollTop>600);
+}
+addEventListener('scroll',rolar,{passive:true});rolar();
+topoBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
