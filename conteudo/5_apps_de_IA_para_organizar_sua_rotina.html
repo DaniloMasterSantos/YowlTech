@@ -391,10 +391,27 @@ lb.addEventListener('touchend',e=>{
 });
 
 /* compartilhar */
-const url=encodeURIComponent(location.href),titulo=encodeURIComponent(document.querySelector('h1').textContent);
-$('s-whats').href='https://wa.me/?text='+titulo+'%20'+url;
-$('s-face').href='https://www.facebook.com/sharer/sharer.php?u='+url;
-$('s-x').href='https://twitter.com/intent/tweet?text='+titulo+'&url='+url;
+/* compartilhar */
+const url = encodeURIComponent(location.href);
+const titulo = encodeURIComponent(document.querySelector('h1').textContent);
+
+// Compartilhamento pelo WhatsApp (se o botão existir)
+const whatsapp = $('s-whats');
+if (whatsapp) {
+  whatsapp.href = 'https://wa.me/?text=' + titulo + '%20' + url;
+}
+
+// Compartilhamento pelo Facebook (se o botão existir)
+const facebook = $('s-face');
+if (facebook) {
+  facebook.href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+}
+
+// Compartilhamento pelo X (se o botão existir)
+const twitter = $('s-x');
+if (twitter) {
+  twitter.href = 'https://twitter.com/intent/tweet?text=' + titulo + '&url=' + url;
+}
 $('copiar').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(location.href);$('copiar-txt').textContent='Link copiado!'}
   catch(e){$('copiar-txt').textContent='Copie pelo endereço do navegador'}
