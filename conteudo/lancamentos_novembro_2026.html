@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDITE 1/6: título da aba e descrição (aparece no Google) -->
+<title>Lançamentos de Novembro de 2026: O Mês Mais Quente do Ano para os Games! – YowlTech</title>
+<meta name="description" content="Resumo curto do artigo, com até 160 caracteres.">
+<link rel="icon" href="../logoYT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#17152F;--noite-2:#201D42;--violeta:#7B54F5;--violeta-fundo:#5B3DC4;
+  --lavanda:#A68CFF;--gelo:#EEEAFF;--laranja:#FF8A3D;--texto:#D9D4F5;--raio:18px;
+  --titulo:'Bricolage Grotesque','Trebuchet MS',sans-serif;--corpo:'Figtree','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noite);color:var(--texto);font-family:var(--corpo);line-height:1.6}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--titulo);color:var(--gelo);line-height:1.15}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+.coluna{width:min(740px,92%);margin-inline:auto}
+.larga{width:min(1000px,92%);margin-inline:auto}
+img{max-width:100%}
+.grad{background:linear-gradient(135deg,var(--violeta-fundo),var(--lavanda))}
+
+#progresso{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--violeta),var(--laranja));z-index:100}
+header.topo{position:sticky;top:0;z-index:50;background:rgba(23,21,47,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,140,255,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--titulo);font-weight:800;font-size:1.35rem;color:var(--gelo)}
+.marca img{width:40px;height:40px;object-fit:contain}
+.marca span{color:var(--laranja)}
+.links{display:flex;gap:6px}
+.links a{padding:8px 14px;border-radius:999px;font-weight:500;transition:background .2s,color .2s}
+.links a:hover{background:var(--violeta);color:#fff}
+
+/* cabeçalho */
+.cab{padding:48px 0 24px}
+.migalha{font-size:.92rem;margin-bottom:18px;color:var(--lavanda)}
+.migalha a:hover{color:var(--laranja)}
+.tag{display:inline-block;background:var(--laranja);color:#2a1300;font-weight:600;font-size:.85rem;padding:3px 14px;border-radius:999px;margin-bottom:14px}
+.cab h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800}
+.subtitulo{font-size:1.2rem;margin:14px 0}
+.info{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem;color:var(--lavanda)}
+.capa{margin:26px auto 0;width:min(1000px,92%)}
+.capa img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--raio)}
+.intro{padding:36px 0 10px;font-size:1.1rem}
+.intro>*+*{margin-top:1.1em}
+.intro a{color:var(--laranja);text-decoration:underline;text-underline-offset:3px}
+.intro strong{color:var(--gelo)}
+
+/* sumário automático */
+.sumario{margin:26px auto 0;background:var(--noite-2);border:1px solid rgba(166,140,255,.2);border-radius:var(--raio);padding:22px 24px}
+.sumario h2{font-size:1.2rem;margin-bottom:14px}
+.sumario ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.sumario a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;transition:background .2s}
+.sumario a:hover{background:var(--violeta)}
+.sumario b{display:grid;place-items:center;min-width:30px;height:30px;border-radius:50%;background:var(--laranja);color:#2a1300;font-size:.9rem}
+
+/* ranking */
+.lista-rank{counter-reset:rank var(--ini,0);padding:30px 0 10px}
+.rank{counter-increment:rank var(--passo,1);display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:center;margin-top:56px;scroll-margin-top:90px}
+.rank:nth-of-type(even) .rank-img{order:2}
+.rank-img{position:relative;aspect-ratio:16/9;border-radius:var(--raio);overflow:visible}
+.rank-img iframe {position: absolute;inset: 0;width: 100%;height: 100%;border: 0;display: block;border-radius: inherit;}
+.rank-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--raio);cursor:zoom-in;box-shadow:0 16px 36px rgba(0,0,0,.4);transition:transform .4s}
+.rank-img:hover img{transform:scale(1.02)}
+.rank-img.grad{border-radius:var(--raio)}
+.num{position:absolute;top:-18px;left:-14px;z-index:2;min-width:64px;height:64px;padding:0 10px;display:grid;place-items:center;border-radius:20px;background:var(--laranja);color:#2a1300;font-family:var(--titulo);font-weight:800;font-size:2rem;box-shadow:0 10px 22px rgba(0,0,0,.4);transform:rotate(-6deg)}
+.rank:nth-of-type(even) .num{left:auto;right:-14px;transform:rotate(6deg)}
+.num::before{content:counter(rank)}
+.rank h2{font-size:clamp(1.5rem,3vw,2rem)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chips span{background:var(--noite-2);border:1px solid rgba(166,140,255,.3);padding:3px 12px;border-radius:999px;font-size:.85rem;color:var(--gelo)}
+.rank p{margin-bottom:12px}
+.ficha{list-style:none;display:grid;gap:4px;font-size:.95rem;margin-bottom:14px}
+.ficha b{color:var(--laranja);font-weight:600}
+.saiba{display:inline-block;color:var(--laranja);font-weight:600;border-bottom:2px solid transparent;transition:border-color .2s}
+.saiba:hover{border-color:var(--laranja)}
+.revela{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.revela.visivel{opacity:1;transform:none}
+
+/* texto solto entre itens (opcional) */
+.texto{width:min(740px,100%);margin:56px auto 0;font-size:1.1rem}
+.destaque{background:linear-gradient(120deg,var(--violeta-fundo),var(--violeta));color:#fff;border-radius:var(--raio);padding:20px 24px}
+.destaque strong{color:#fff}
+
+/* galeria */
+.galeria-sec{padding:60px 0 10px}
+.galeria-sec h2{font-size:1.8rem;margin-bottom:6px}
+.galeria-sec>p{margin-bottom:22px}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.galeria figure{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.galeria img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;transition:transform .5s}
+.galeria figure:hover img{transform:scale(1.08)}
+.galeria figcaption{position:absolute;inset:auto 0 0 0;padding:26px 12px 10px;font-size:.85rem;color:#fff;background:linear-gradient(to top,rgba(23,21,47,.9),transparent);pointer-events:none}
+.credito{font-size:.85rem;color:var(--lavanda);margin-top:18px}
+
+/* compartilhar, navegar, leia também */
+.compartilhar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:44px auto 0;padding:22px 0;border-block:1px solid rgba(166,140,255,.2)}
+.compartilhar span{font-weight:600;color:var(--gelo);margin-right:4px}
+.compartilhar a,.compartilhar button{display:inline-flex;align-items:center;gap:8px;background:var(--noite-2);color:var(--gelo);border:1px solid rgba(166,140,255,.3);padding:9px 16px;border-radius:999px;font:inherit;font-size:.95rem;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.compartilhar a:hover,.compartilhar button:hover{background:var(--laranja);color:#2a1300;transform:translateY(-2px)}
+.compartilhar svg{width:18px;height:18px}
+.navegar{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px auto 0}
+.navegar a{display:block;background:var(--noite-2);border:1px solid rgba(166,140,255,.25);border-radius:var(--raio);padding:16px 20px;transition:transform .2s,border-color .2s}
+.navegar a:hover{transform:translateY(-4px);border-color:var(--laranja)}
+.navegar small{color:var(--lavanda)}
+.navegar b{display:block;font-family:var(--titulo);color:var(--gelo);margin-top:2px}
+.navegar .prox{text-align:right}
+.navegar [hidden]{display:none}
+.leia{padding:50px 0 20px}
+.leia h2{font-size:1.8rem;margin-bottom:22px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.post{background:var(--noite-2);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.post:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(91,61,196,.4)}
+.post .mini{aspect-ratio:16/9;overflow:hidden}
+.post .mini img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.post:hover .mini img{transform:scale(1.06)}
+.post .txt{padding:16px 18px 20px}
+.post small{color:var(--laranja);font-weight:600}
+.post h3{font-size:1.1rem;margin:4px 0 6px}
+.post p{font-size:.92rem}
+
+/* visualizador de imagens (clique para ampliar) */
+#lb{position:fixed;inset:0;z-index:200;background:rgba(10,9,24,.94);display:grid;grid-template-rows:1fr auto;place-items:center;padding:20px;animation:surge .25s}
+#lb[hidden]{display:none}
+@keyframes surge{from{opacity:0}}
+#lb img{max-width:min(1200px,94vw);max-height:78vh;border-radius:12px;object-fit:contain}
+#lb p{color:var(--gelo);text-align:center;margin-top:12px;max-width:700px}
+#lb button{position:absolute;border:0;border-radius:50%;width:48px;height:48px;background:rgba(238,234,255,.92);color:var(--noite);font-size:1.4rem;cursor:pointer;transition:background .2s}
+#lb button:hover{background:var(--laranja)}
+#lb .x{top:18px;right:18px}
+#lb .e{left:16px;top:50%;transform:translateY(-50%)}
+#lb .d{right:16px;top:50%;transform:translateY(-50%)}
+
+#topo-btn{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--laranja);color:#2a1300;cursor:pointer;display:grid;place-items:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s;box-shadow:0 8px 20px rgba(0,0,0,.35);z-index:60}
+#topo-btn.mostra{opacity:1;pointer-events:auto;transform:none}
+#topo-btn svg{width:22px;height:22px}
+footer{margin-top:50px;padding:30px 0;border-top:1px solid rgba(166,140,255,.18);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.social{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--noite-2);border:1px solid rgba(166,140,255,.3);color:var(--gelo);transition:.2s}
+.social:hover{background:var(--laranja);color:#2a1300;transform:translateY(-3px)}
+
+@media(max-width:780px){
+  .rank{grid-template-columns:1fr;gap:22px}
+  .rank:nth-of-type(even) .rank-img{order:0}
+  .rank:nth-of-type(even) .num{left:-10px;right:auto;transform:rotate(-6deg)}
+  .num{left:-8px;top:-14px;min-width:54px;height:54px;font-size:1.6rem}
+  .navegar{grid-template-columns:1fr}
+  .navegar .prox{text-align:left}
+  #lb .e,#lb .d{top:auto;bottom:18px;transform:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.revela{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="progresso"></div>
+
+<header class="topo">
+  <div class="wrap nav">
+    <a href="../index.html" class="marca"><img src="../logoYT.png" alt=""> Yowl<span>Tech</span></a>
+    <nav class="links" aria-label="Principal">
+      <a href="../index.html">Início</a>
+      <a href="../buscar.html">Buscar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ============================================================
+       EDITE 2/6: informações do artigo
+       data-cat  = games | tech | hardware
+       data-data = data de publicação no formato AAAA-MM-DD
+       ============================================================ -->
+  <section class="cab" id="meta" data-cat="games" data-data="2026-10-30">
+    <div class="coluna">
+      <p class="migalha"><a href="../index.html">Início</a> › <a href="../buscar.html">Artigos</a></p>
+      <span class="tag" id="tag"></span>
+      <h1>Lançamentos de Novembro de 2026: O Mês Mais Quente do Ano para os Games! 🎮🔥</h1>
+      <p class="subtitulo">Prepare o seu bolso e o seu espaço no HD (ou SSD!), porque listamos abaixo todos os grandes lançamentos de novembro de 2026, organizados com suas respectivas datas e desenvolvedoras. Confira!</p>
+      <div class="info"><span id="data"></span><span id="leitura"></span><span>Por YowlTech</span></div>
+    </div>
+  </section>
+
+  <!-- EDITE 3/6: imagem de capa (800x450 ou maior, proporção 16:9).
+       O caminho começa com ../imagens/ porque esta página fica na pasta conteudo -->
+  <div class="capa">
+    <img class="grad" src="../imagens/lancamentos_novembro.png" alt="Descreva a imagem em poucas palavras" onerror="this.remove()">
+  </div>
+
+  <!-- EDITE 4/6: texto de abertura e sumário (o sumário é criado sozinho) -->
+  <div class="intro coluna">
+    <p>Novembro chegou com tudo! O penúltimo mês de 2026 está simplesmente histórico para a indústria dos videogames, misturando o lançamento mais aguardado da década, retornos de franquias lendárias, remakes de peso e edições definitivas imperdíveis. <!--<a href="https://exemplo.com" target="_blank" rel="noopener">links</a> para citar a fonte.--></p>
+  </div>
+  <nav class="sumario larga" id="sumario" aria-label="Sumário" hidden>
+    <h2>Neste ranking</h2>
+    <ol></ol>
+  </nav>
+
+  <!-- ============================================================
+       EDITE 5/6: os itens do ranking.
+       data-ordem="crescente"  -> 1, 2, 3 ... (o melhor no começo)
+       data-ordem="regressiva" -> 10, 9, 8 ... 1 (suspense: o melhor no final)
+       Para adicionar um jogo, copie um bloco <article class="rank"> inteiro.
+       A numeração é automática: pode reordenar à vontade, sem renumerar.
+       Clique na imagem para ampliar: o atributo data-zoom faz isso.
+       ============================================================ -->
+  <section class="lista-rank larga" id="lista" data-ordem="crescente">
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3JUboYgqIxc" title="Grand Theft Auto VI | Trailer de lançamento" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen onerror="this.remove()"></iframe>
+        <!--<img src="../imagens/gta6.webp" alt="Nome do primeiro jogo" data-zoom loading="lazy" onerror="this.remove()">-->
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Grand Theft Auto VI (GTA 6)</h2>
+        <div class="chips"><span>Ação e Aventura / Mundo Aberto</span><span>PlayStation 5, Xbox Series X|S</span></div>
+        <p>O marco técnico e cultural da década. Retornando ao estado de Leonida e à icônica Vice City sob a perspectiva dos protagonistas Lucia e Jason, o jogo promete redefinir os padrões de inteligência artificial de NPCs, física de veículos e densidade urbana. Espere uma narrativa criminal cinematográfica no estilo "Bonnie e Clyde modernos", com um mundo aberto hiper-detalhado que reage organicamente às suas ações, redes sociais integradas no universo do jogo e uma simulação de ecossistema urbano sem precedentes.</p>
+        <ul class="ficha">
+          <li><b>Lançamento</b> 19 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Rockstar Games</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe src="https://www.youtube.com/embed/YlFr76IUmrk" title="Lightyear Frontier: 1.0 Release Date Reveal Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Lightyear Frontier (Versão 1.0)</h2>
+        <div class="chips"><span>Simulador Fazenda / Exploração Espacial</span><span>PC, Xbox Series X|S</span></div>
+        <p>Diga adeus aos tratores tradicionais e olá aos mechs customizáveis. Nesta versão 1.0 definitiva, você gerencia sua fazenda alienígena sustentável, planta colheitas exóticas, constrói bases ecológicas e desvenda os mistérios de um planeta desconhecido. O jogo aprofunda a exploração de biomas alienígenas, adiciona novas tecnologias para o seu mech, melhora o sistema meteorológico dinâmico e expande o modo cooperativo para até 4 jogadores construírem o refúgio perfeito longe da Terra.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 4 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Frame Break</li>
+        </ul>
+      </div>
+    </article>
+
+    
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/On13mNdviG8" title="Stellar Blade Complete Edition – Pre-order Trailer – Nintendo Switch 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Stellar Blade: Complete Edition</h2>
+        <div class="chips"><span>Ação e Aventura / Hack and Slash</span><span>PlayStation 5, PC, Nintendo Switch 2</span></div>
+        <p>A jornada de Eve em direção à retoma da Terra devastada pelos Naytibas ganha contornos ainda mais épicos. Esta edição completa reúne todas as atualizações de conteúdo já lançadas, introduz novos modos de desafio de chefes, expande a árvore de habilidades de combate fluido com lâminas e inclui pacotes de personalização estéticos inéditos — destacando-se a colaboração especial com trajes icônicos inspirados em outros universos dos games, como o visual clássico de Bayonetta.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 6 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Shift Up</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/wuFfiTEr2yc" title="The Legend of Zelda: Ocarina of Time – The Legend of Zelda 40th Anniversary Direct 9.8.2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>The Legend of Zelda: Ocarina of Time (Remake)</h2>
+        <div class="chips"><span>Ação e Aventura / RPG</span><span>Nintendo Switch 2</span></div>
+        <p>Uma reimaginação completa e respeitosa de um dos pilares da história dos videogames. Mais do que uma simples remasterização, este remake reconstrói a terra de Hyrule do zero com gráficos de última geração, iluminação volumétrica dinâmica e trilha sonora totalmente orquestrada. Mecânicas clássicas de exploração de masmorras, resolução de quebra-cabeças e o uso da Ocarina ganham fluidez moderna, mantendo intacta a magia atemporal da jornada de Link entre o passado e o futuro.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 5 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Nintendo EPD / Grezzo</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/w-veMlH2L-A" title="Godzilla: Destroy All Monsters Melee Remastered - Announcement &amp; Release Date | PS5 Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Godzilla: Destroy All Monsters Melee (Remastered)</h2>
+        <div class="chips"><span>Ação / Jogo de Luta Arena</span><span>PC, PlayStation 5, Xbox Series X|S, Nintendo Switch</span></div>
+        <p>A pancadaria caótica de monstros gigantes está de volta para sacudir os fãs de tokusatsu e destruição urbana. Esta versão remasterizada traz modelos tridimensionais totalmente repaginados em alta definição, cenários altamente destrutivos com física de escombros refinada e a adição de um netcode com rollback robusto para partidas online competitivas e fluidas. Assuma o controle de ícones como Godzilla, Mothra, King Ghidorah e Rodan em arenas fechadas onde cada prédio derrubado pode virar uma arma.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 3 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Pipeworks Studio / Bandai Namco</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/RFg-S2seDqU" title="SONIC PICO PARK - Summer Game Fest Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Sonic Pico Park</h2>
+        <div class="chips"><span>Puzzle Cooperativo / Plataforma</span><span>PC, Nintendo Switch, PlayStation 5, Xbox Series X|S</span></div>
+        <p>Prepare-se para testar a coordenação (e a amizade) do seu grupo de amigos. Combinando a velocidade eletrizante e os loops clássicos da franquia Sonic com o level design focado em cooperação estrita de Pico Park, o jogo exige que todos os jogadores trabalhem em sincronia absoluta para superar fases cronometradas, desativar armadilhas e resolver quebra-cabeças baseados em física e momentum. Ideal para sessões de jogatina caóticas e divertidas no sofá ou online.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 12 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> TECOPARK / SEGA</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/FvjOIlMzd2U" title="Voidbreaker - Release Date Trailer | PS5 Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Void Breaker 1.0</h2>
+        <div class="chips"><span>FPS / Sci-Fi</span><span>PC, PlayStation 5, Xbox Series X|S</span></div>
+        <p>Um tiro certeiro para os fãs de sci-fi espacial de alta adrenalina. Em Void Breaker, você assume o papel de um piloto mercenário capaz de manipular brechas dimensionais durante combates espaciais e terrestres contra frotas alienígenas colossais. O jogo aposta em um arsenal futurista modular altamente customizável, campanhas cooperativas intensas e batalhas contra chefes em escala titânica que exigem estratégia de posicionamento e reflexos rápidos.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 4 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Stubby Games</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/xXaXYxcbA6A" title="World of Warcraft: Forever | New Horizons | Cinematic Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>World of Warcraft Forever</h2>
+        <div class="chips"><span>MMORPG</span><span>PC, Mac</span></div>
+        <p>Uma iniciativa massiva voltada para redefinir o futuro do MMORPG mais longevo e influente da história. WoW Forever introduz uma reformulação estrutural profunda no motor gráfico e na interface do jogo, unificando conteúdos clássicos e modernos em um ecossistema contínuo. Espere sistemas de progressão horizontal repaginados, eventos globais dinâmicos que alteram permanentemente regiões de Azeroth e facilidades de acessibilidade que aproximam veteranos e novatos para novas eras de raids e exploração.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 4 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> Blizzard Entertainment</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="rank revela">
+      <figure class="rank-img grad">
+        <iframe width="933" height="525" src="https://www.youtube.com/embed/1wJ1HTwImF4" title="Where the Seeds Fall - Reveal Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <span class="num" aria-hidden="true"></span>
+      </figure>
+      <div class="rank-txt">
+        <h2>Where the Seeds Fall</h2>
+        <div class="chips"><span>Narrativa / Indie</span><span>PlayStation 5, Nintendo Switch 2 e PC</span></div>
+        <p>Seguindo a tradição de obras aclamadas da Annapurna, este título é uma viagem emocional profunda através de escolhas morais difíceis e uma direção de arte deslumbrante pintada à mão. A história acompanha um protagonista em uma jornada melancólica por paisagens rurais surrealistas onde cada decisão de cultivo e interação altera o destino das comunidades locais. É uma experiência focada em ritmo cadenciado, trilha sonora imersiva e reflexões sobre memória, perda e renovação.</p>
+        <ul class="ficha">
+          <li><b>Lançamento:</b> 5 de novembro de 2026</li>
+          <li><b>Desenvolvedora:</b> CygamesEdge</li>
+        </ul>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================================
+       EDITE 6/6 (opcional): galeria de imagens extras.
+       Cada <figure> é uma foto; a legenda é o próprio alt.
+       Apague a seção inteira se não quiser galeria.
+       ============================================================ -->
+       
+
+  <div class="coluna">
+    <div class="compartilhar" aria-label="Compartilhar">
+      <span>Compartilhar:</span>
+      <button type="button" id="copiar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></svg><b style="font-weight:500" id="copiar-txt">Copiar link</b></button>
+      <!--<a id="s-whats" href="#" target="_blank" rel="noopener">WhatsApp</a>-->
+      <a id="s-face" href="https://www.instagram.com/yowltech/" target="_blank" rel="noopener">Instagram</a>
+      <!--<a id="s-x" href="#" target="_blank" rel="noopener">X</a>-->
+    </div>
+
+    <!-- Anterior / próximo: se o artigo estiver no artigos.js, se preenchem sozinhos.
+         Para definir à mão, troque o href="#" pelo nome da página (ex.: outro-artigo.html). -->
+    <div class="navegar">
+      <a href="#" id="ant" hidden><small>← Artigo anterior</small><b></b></a>
+      <a href="#" id="prox" class="prox" hidden><small>Próximo artigo →</small><b></b></a>
+    </div>
+  </div>
+
+  <section class="leia">
+    <div class="wrap">
+      <h2>Leia também</h2>
+      <div class="grade" id="grade"></div>
+    </div>
+  </section>
+</main>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button class="x" aria-label="Fechar">✕</button>
+  <button class="e" aria-label="Imagem anterior">‹</button>
+  <button class="d" aria-label="Próxima imagem">›</button>
+  <img src="" alt="">
+  <p></p>
+</div>
+
+<button id="topo-btn" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></button>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> YowlTech. Todos os direitos reservados.</span>
+    <!-- troque o # pelo link do seu Instagram -->
+    <a class="social" href="https://www.instagram.com/yowltech/" aria-label="Instagram da YowlTech" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../artigos.js"></script>
+<script>
+const NOMES={games:'Games',tech:'Tecnologia',hardware:'Hardware'};
+/* esta página está na pasta conteudo; os caminhos do artigos.js partem da pasta principal */
+const RAIZ='../';
+const ir=u=>u==='#'?'#':RAIZ+u;
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* categoria, data e tempo de leitura */
+const meta=$('meta');
+$('tag').textContent=NOMES[meta.dataset.cat]||'Artigo';
+$('data').textContent=new Date(meta.dataset.data+'T12:00:00').toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+const palavras=document.querySelector('main').textContent.trim().split(/\s+/).length;
+$('leitura').textContent='Leitura de '+Math.max(1,Math.round(palavras/200))+' min';
+$('ano').textContent=new Date().getFullYear();
+
+/* numeração do ranking (crescente ou regressiva) e sumário automático */
+const lista=$('lista'),itens=[...lista.querySelectorAll('.rank')];
+const regressiva=lista.dataset.ordem==='regressiva';
+if(regressiva){lista.style.setProperty('--ini',itens.length+1);lista.style.setProperty('--passo',-1)}
+if(itens.length){
+  const ol=$('sumario').querySelector('ol');
+  itens.forEach((it,i)=>{
+    it.id='item-'+(i+1);
+    const n=regressiva?itens.length-i:i+1;
+    ol.insertAdjacentHTML('beforeend',`<li><a href="#item-${i+1}"><b>${n}</b>${esc(it.querySelector('h2').textContent)}</a></li>`);
+  });
+  $('sumario').hidden=false;
+}
+
+/* itens aparecem ao rolar */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visivel');io.unobserve(e.target)}
+}),{threshold:.15});
+document.querySelectorAll('.revela').forEach(el=>io.observe(el));
+
+/* clique para ampliar imagens */
+const fotos=[...document.querySelectorAll('img[data-zoom]')];
+const lb=$('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('p');
+let atual=0;
+function abrir(i){
+  atual=(i+fotos.length)%fotos.length;
+  const f=fotos[atual];
+  lbImg.src=f.dataset.full||f.src;lbImg.alt=f.alt;lbCap.textContent=f.alt;
+  lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.x').focus();
+}
+function fechar(){lb.hidden=true;document.body.style.overflow=''}
+fotos.forEach((f,i)=>f.addEventListener('click',()=>abrir(i)));
+lb.querySelector('.x').onclick=fechar;
+lb.querySelector('.e').onclick=()=>abrir(atual-1);
+lb.querySelector('.d').onclick=()=>abrir(atual+1);
+lb.addEventListener('click',e=>{if(e.target===lb)fechar()});
+addEventListener('keydown',e=>{
+  if(lb.hidden)return;
+  if(e.key==='Escape')fechar();
+  if(e.key==='ArrowLeft')abrir(atual-1);
+  if(e.key==='ArrowRight')abrir(atual+1);
+});
+let x0=null;
+lb.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(x0===null)return;const d=e.changedTouches[0].clientX-x0;
+  if(Math.abs(d)>50)abrir(atual+(d<0?1:-1));x0=null;
+});
+
+/* compartilhar */
+const url=encodeURIComponent(location.href),titulo=encodeURIComponent(document.querySelector('h1').textContent);
+$('s-whats').href='https://wa.me/?text='+titulo+'%20'+url;
+$('s-face').href='https://www.facebook.com/sharer/sharer.php?u='+url;
+$('s-x').href='https://twitter.com/intent/tweet?text='+titulo+'&url='+url;
+$('copiar').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(location.href);$('copiar-txt').textContent='Link copiado!'}
+  catch(e){$('copiar-txt').textContent='Copie pelo endereço do navegador'}
+  setTimeout(()=>$('copiar-txt').textContent='Copiar link',2200);
+});
+
+/* anterior, próximo e "leia também" a partir do artigos.js */
+const pagina=decodeURIComponent(location.pathname.split('/').pop());
+const todos=[...ARTIGOS].sort((a,b)=>b.data.localeCompare(a.data));
+const idx=todos.findIndex(a=>pagina&&a.url.split('/').pop()===pagina);
+function botao(el,art){
+  if(!art)return;
+  el.href=ir(art.url);el.querySelector('b').textContent=art.titulo;el.hidden=false;
+}
+if(idx>=0){botao($('ant'),todos[idx+1]);botao($('prox'),todos[idx-1]);}
+['ant','prox'].forEach(id=>{const b=$(id);if(b.getAttribute('href')!=='#')b.hidden=false});
+const outros=todos.filter((_,i)=>i!==idx);
+const mesma=outros.filter(a=>a.categoria===meta.dataset.cat);
+const sugeridos=[...mesma,...outros.filter(a=>!mesma.includes(a))].slice(0,3);
+$('grade').innerHTML=sugeridos.map(a=>`
+  <a class="post" href="${esc(ir(a.url))}">
+    <div class="mini grad"><img src="${esc(RAIZ+a.imagem)}" alt="" loading="lazy" onerror="this.remove()"></div>
+    <div class="txt"><small>${NOMES[a.categoria]}</small><h3>${esc(a.titulo)}</h3><p>${esc(a.resumo)}</p></div>
+  </a>`).join('');
+
+/* progresso de leitura e botão de voltar ao topo */
+const barra=$('progresso'),topoBtn=$('topo-btn');
+function rolar(){
+  const h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+  barra.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+  topoBtn.classList.toggle('mostra',h.scrollTop>600);
+}
+addEventListener('scroll',rolar,{passive:true});rolar();
+topoBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
